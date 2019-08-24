@@ -37,8 +37,10 @@ public class DBServiceImpl implements DBService {
     @Override
     public boolean addUser(User userToAdd){
         //对传入的User对象空值判断    id和name都不能为空
-        if(userToAdd.getUid()!=null&"".equals(userToAdd.getUid())
-            &&userToAdd.getName()!=null&&"".equals(userToAdd.getName())){
+//        if(userToAdd.getUid()!=null && "".equals(userToAdd.getUid())
+//            && userToAdd.getName()!=null && "".equals(userToAdd.getName())){
+        //TODO 临时改成true
+        if(true){
             try{
                 int effectedRow = userDao.insertUser(userToAdd);
                 if(effectedRow>0){
@@ -56,8 +58,8 @@ public class DBServiceImpl implements DBService {
 
     @Override
     public boolean modifyUser(User userToModify) {
-        if(userToModify.getUid()!=null&"".equals(userToModify.getUid())
-                &&userToModify.getName()!=null&&"".equals(userToModify.getName())){
+        if(userToModify.getUid()!=null && "".equals(userToModify.getUid())
+                && userToModify.getName()!=null && "".equals(userToModify.getName())){
             try{
                 int effectedRow = userDao.updateUser(userToModify);
                 if(effectedRow>1){
@@ -117,8 +119,8 @@ public class DBServiceImpl implements DBService {
 
     @Override
     public boolean addActivity(Activity activityToAdd) {
-        if(activityToAdd.getTitle()!=null&&"".equals(activityToAdd.getTitle())&&
-                activityToAdd.getSponsor()!=null&&"".equals(activityToAdd.getSponsor())){
+        if(activityToAdd.getTitle()!=null && !("".equals(activityToAdd.getTitle())) &&
+                activityToAdd.getSponsor()!=null && !("".equals(activityToAdd.getSponsor()))){
             try{
                 int effectedRow = activityDao.insertActivity(activityToAdd);
                 if(effectedRow>0){
@@ -192,8 +194,8 @@ public class DBServiceImpl implements DBService {
     @Override
     public boolean addParticipantActivity(Participant_Activity p_aToAdd) {
         //对传入的p_a对象空值判断    uid和aid都不能为空
-        if(p_aToAdd.getAid()!=null&"".equals(p_aToAdd.getAid())
-                &&p_aToAdd.getP_uid()!=null&&"".equals(p_aToAdd.getP_uid())){
+        if(p_aToAdd.getAid()!=null && "".equals(p_aToAdd.getAid())
+                && p_aToAdd.getP_uid()!=null && "".equals(p_aToAdd.getP_uid())){
             try{
                 int effectedRow = p_aDao.insertParticipantActivity(p_aToAdd);
                 if(effectedRow>0){

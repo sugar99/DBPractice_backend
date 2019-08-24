@@ -13,7 +13,7 @@ public class Activity {
     //活动地点
     private String place;
     //活动类别
-    private String tag;
+//    private String tag;
     //活动描述 500以内
     private String desc;
     //活动发起人 uid
@@ -21,16 +21,17 @@ public class Activity {
     //活动是否官方认证
     private Boolean certified;
 
-    //构造函数 用于作ut
+    //默认构造函数 用于作ut
+    public Activity(){}
 
 
     public Activity(Integer id, String title, Date date, String place,
-                    String tag, String desc, String sponsor, Boolean certified) {
+                    String desc, String sponsor, Boolean certified) {
         this.id = id;
         this.title = title;
         this.date = date;
         this.place = place;
-        this.tag = tag;
+//        this.tag = tag;
         this.desc = desc;
         this.sponsor = sponsor;
         this.certified = certified;
@@ -53,9 +54,9 @@ public class Activity {
         return place;
     }
 
-    public String getTag() {
-        return tag;
-    }
+//    public String getTag() {
+//        return tag;
+//    }
 
     public String getDesc() {
         return desc;
@@ -85,9 +86,9 @@ public class Activity {
         this.place = place;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
+//    public void setTag(String tag) {
+//        this.tag = tag;
+//    }
 
     public void setDesc(String desc) {
         this.desc = desc;

@@ -23,9 +23,9 @@
         WHERE `sponsor`=#{s_uid}
     </select>
     <insert id="insertActivity" parameterType="com.example.dbpractice.entity.Activity"
-            useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-        INSERT INTO `activity`
-        VALUES (#{title},#{date},#{place},#{tag},#{desc},#{sponsor},#{certified})
+            useGeneratedKeys="true"  keyProperty="id">
+        INSERT INTO `activity`(`title`,`date`,`place`,`desc`,`sponsor`,`certified`)
+        VALUES (#{title},#{date},#{place},#{desc},#{sponsor},#{certified})
     </insert>
     <update id="updateActivity" parameterType="com.example.dbpractice.entity.Activity">
         UPDATE `activity`

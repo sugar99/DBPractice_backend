@@ -34,7 +34,7 @@ public class UserDaoTest {
     }
 
     @Test
-    @Ignore
+
     public void insertUser() {
         User user = new User("201730686666","wong","c8","000000");
         int effectedNum = userDao.insertUser(user);
